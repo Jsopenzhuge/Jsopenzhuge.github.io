@@ -184,48 +184,48 @@ function generatePhotoGrid() {
     const photos = [
         {
             id: 1,
-            imageUrl: 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80',
-            caption: '晨间咖啡时光'
+            imageUrl: '1.jpg',
+            caption: '师大中轴线'
         },
         {
             id: 2,
-            imageUrl: 'https://images.unsplash.com/photo-1507842217343-583bb7270b66?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80',
-            caption: '图书馆的静谧午后'
+            imageUrl: '2.jpg',
+            caption: '师大墙'
         },
         {
             id: 3,
-            imageUrl: 'https://images.unsplash.com/photo-1506929562872-bb421503ef21?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80',
-            caption: '海边日落漫步'
+            imageUrl: '3.jpg',
+            caption: '枫叶拼成的爱心'
         },
         {
             id: 4,
-            imageUrl: 'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80',
-            caption: '工作室的绿植角落'
+            imageUrl: '4.jpg',
+            caption: '时间广场'
         },
         {
             id: 5,
-            imageUrl: 'https://images.unsplash.com/photo-1513584684374-8bab748fbf90?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80',
-            caption: '城市夜景随拍'
+            imageUrl: '5.jpg',
+            caption: '冬季随拍第一弹'
         },
         {
             id: 6,
-            imageUrl: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80',
-            caption: '雪山徒步记录'
+            imageUrl: '6.jpg',
+            caption: '冬季随拍第二弹'
         },
         {
             id: 7,
-            imageUrl: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80',
-            caption: '自制健康早餐'
+            imageUrl: '7.jpg',
+            caption: '三五成群'
         },
         {
             id: 8,
-            imageUrl: 'https://images.unsplash.com/photo-1516724562728-afc824a36e84?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80',
-            caption: '摄影器材收藏'
+            imageUrl: '8.jpg',
+            caption: 'TNU图书馆'
         },
         {
             id: 9,
-            imageUrl: 'https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80',
-            caption: '阅读与笔记时间'
+            imageUrl: '9.jpg',
+            caption: 'I Love TNU'
         }
     ];
     
@@ -237,7 +237,7 @@ function generatePhotoGrid() {
         const photoItem = document.createElement('div');
         photoItem.className = 'photo-item';
         photoItem.innerHTML = `
-            <img src="${photo.imageUrl}" alt="${photo.caption}" loading="lazy">
+            <img src="https://jsblog-1257817016.cos.ap-guangzhou.myqcloud.com/camera/${photo.imageUrl}" alt="${photo.caption}" loading="lazy">
             <div class="photo-overlay">
                 <p class="photo-caption">${photo.caption}</p>
             </div>
@@ -309,61 +309,6 @@ function generateArticles() {
             </div>
         `;
         articlesList.appendChild(articleCard);
-    });
-}
-
-/**
- * 生成标签云
- */
-function generateTags() {
-    const tagsCloud = document.querySelector('.tags-cloud');
-    if (!tagsCloud) return;
-    
-    const tags = [
-        '摄影', '咖啡', '极简生活', '城市漫步', '阅读', '旅行',
-        '美食', '设计', '音乐', '写作', '植物', '手工艺',
-        '数码产品', '电影', '运动', '冥想'
-    ];
-    
-    // 清空标签云
-    tagsCloud.innerHTML = '';
-    
-    // 生成标签
-    tags.forEach((tag, index) => {
-        const tagElement = document.createElement('a');
-        tagElement.href = '#';
-        tagElement.className = 'tag';
-        if (index === 0) tagElement.classList.add('active');
-        tagElement.textContent = tag;
-        tagElement.dataset.tag = tag;
-        tagsCloud.appendChild(tagElement);
-    });
-}
-
-/**
- * 设置标签点击事件
- */
-function setupTagClick() {
-    const tags = document.querySelectorAll('.tag');
-    
-    tags.forEach(tag => {
-        tag.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            // 移除所有标签的active类
-            tags.forEach(t => t.classList.remove('active'));
-            
-            // 给当前点击的标签添加active类
-            this.classList.add('active');
-            
-            // 在实际应用中，这里会过滤显示相关文章
-            // 这里只是模拟标签筛选功能
-            const tagName = this.dataset.tag;
-            console.log(`筛选标签: ${tagName}`);
-            
-            // 显示提示
-            showNotification(`正在筛选标签: ${tagName}`);
-        });
     });
 }
 

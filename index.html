@@ -1,181 +1,174 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>闲人的个人博客</title>
-    <link rel="stylesheet" href="css/style.css">
-    <!-- Google字体 -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500&family=Pacifico&display=swap" rel="stylesheet">
-    <!-- Font Awesome图标 -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📝</text></svg>">
-</head>
-<body>
-    <!-- 顶部导航栏 -->
-    <header class="navbar">
-        <div class="container">
-            <div class="navbar-content">
-                <h1 class="blog-title">闲人's Blog</h1>
-                <nav class="nav-menu">
-                    <a href="#" class="nav-link active">
-                        <i class="fas fa-home"></i>
-                        <span class="nav-text">首页</span>
-                    </a>
-                    <a href="#" class="nav-link">
-                        <i class="fas fa-archive"></i>
-                        <span class="nav-text">归档</span>
-                    </a>
-                    <a href="#" class="nav-link">
-                        <i class="fas fa-user"></i>
-                        <span class="nav-text">关于</span>
-                    </a>
-                    <a href="#" class="nav-link search-btn">
-                        <i class="fas fa-search"></i>
-                        <span class="nav-text">搜索</span>
-                    </a>
-                    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">
-                        <i class="fas fa-moon"></i>
-                    </button>
-                </nav>
-                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="菜单">
-                    <i class="fas fa-bars"></i>
-                </button>
-            </div>
-        </div>
-    </header>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>闲人的个人博客</title>
+		<link rel="stylesheet" href="css/style.css">
+		<!-- Google字体 -->
+		<link
+			href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500&family=Pacifico&display=swap"
+			rel="stylesheet">
+		<!-- Font Awesome图标 -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+		<!-- <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📝</text></svg>"> -->
+		<link rel="icon" type="image/x-icon" href="img/logo.png">
+	</head>
+	<body>
+		<!-- 顶部导航栏 -->
+		<header class="navbar">
+			<div class="container">
+				<div class="navbar-content">
+					<h1 class="blog-title"><img src="img/logo.png" width="40px" height="40px" />闲人's Blog</h1>
+					<nav class="nav-menu">
+						<a href="#" class="nav-link active">
+							<i class="fas fa-home"></i>
+							<span class="nav-text">首页</span>
+						</a>
+						<a href="#" class="nav-link">
+							<i class="fas fa-archive"></i>
+							<span class="nav-text">归档</span>
+						</a>
+						<a href="#" class="nav-link">
+							<i class="fas fa-user"></i>
+							<span class="nav-text">关于</span>
+						</a>
+						<a href="#" class="nav-link search-btn">
+							<i class="fas fa-search"></i>
+							<span class="nav-text">搜索</span>
+						</a>
+						<button class="theme-toggle" id="themeToggle" aria-label="切换主题">
+							<i class="fas fa-moon"></i>
+						</button>
+					</nav>
+					<button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="菜单">
+						<i class="fas fa-bars"></i>
+					</button>
+				</div>
+			</div>
+		</header>
 
-    <!-- 搜索框 -->
-    <div class="search-container" id="searchContainer">
-        <div class="search-box">
-            <input type="text" class="search-input" placeholder="搜索文章、标签或关键词...">
-            <button class="search-close" id="searchClose">
-                <i class="fas fa-times"></i>
-            </button>
-        </div>
-    </div>
+		<!-- 搜索框 -->
+		<div class="search-container" id="searchContainer">
+			<div class="search-box">
+				<input type="text" class="search-input" placeholder="搜索文章、标签或关键词...">
+				<button class="search-close" id="searchClose">
+					<i class="fas fa-times"></i>
+				</button>
+			</div>
+		</div>
 
-    <!-- 主内容区域 -->
-    <main class="main-content">
-        <div class="container">
-            <div class="content-wrapper">
-                <!-- 左侧主要内容 -->
-                <div class="main-column">
-                    <!-- 动态个人简介卡片 -->
-                    <section class="intro-card">
-                        <div class="intro-content">
-                            <div class="avatar-container">
-                                <div class="avatar-frame">
-                                    <img src="img/xr.jpg" alt="个人头像" class="avatar">
-                                </div>
-                            </div>
-                            <div class="intro-text">
-                                <h2 class="intro-name">闲人</h2>
-                                <p class="intro-tagline">Digital Storyteller & Sunset Chaser</p>
-                                <p class="intro-desc">一个热爱生活、记录美好的数字游民。喜欢摄影、咖啡和城市漫步，在这里分享我的生活碎片和思考。</p>
-                                <div class="social-icons">
-                                    <a href="#" class="social-icon" aria-label="微信">
-                                        <i class="fab fa-weixin"></i>
-                                    </a>
-                                    <a href="#" class="social-icon" aria-label="QQ">
-                                        <i class="fab fa-qq"></i>
-                                    </a>
-                                    <a href="#" class="social-icon" aria-label="邮箱">
-                                        <i class="fas fa-envelope"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
+		<!-- 主内容区域 -->
+		<main class="main-content">
+			<div class="container">
+				<div class="content-wrapper">
+					<!-- 左侧主要内容 -->
+					<div class="main-column">
+						<!-- 动态个人简介卡片 -->
+						<section class="intro-card">
+							<div class="intro-content">
+								<div class="avatar-container">
+									<div class="avatar-frame">
+										<img src="img/xr.jpg" alt="个人头像" class="avatar">
+									</div>
+								</div>
+								<div class="intro-text">
+									<h2 class="intro-name">闲人</h2>
+									<p class="intro-tagline">技术宅 & CSLover</p>
+									<!-- <p class="intro-desc">一个热爱生活、记录美好的数字游民。喜欢摄影、咖啡和城市漫步，在这里分享我的生活碎片和思考。</p> -->
+									<div class="social-icons">
+										<a href="#" class="social-icon" aria-label="微信">
+											<i class="fab fa-weixin"></i>
+										</a>
+										<a href="#" class="social-icon" aria-label="QQ">
+											<i class="fab fa-qq"></i>
+										</a>
+										<a href="#" class="social-icon" aria-label="邮箱">
+											<i class="fas fa-envelope"></i>
+										</a>
+									</div>
+								</div>
+							</div>
+						</section>
+						<section class="photo-grid-section fade-up animate-in">
+							<h3 class="section-title">生活碎片 <i class="fas fa-camera"></i></h3>
+							<div class="photo-grid">
 
-                    <!-- 精选照片墙 -->
-                    <section class="photo-grid-section">
-                        <h3 class="section-title">生活碎片 <i class="fas fa-camera"></i></h3>
-                        <div class="photo-grid">
-                            <!-- 照片将通过JavaScript动态生成 -->
-                        </div>
-                    </section>
+							</div>
+						</section>
+						<!-- 近期文章 -->
+						<section class="articles-section">
+							<h3 class="section-title">近期文章 <i class="fas fa-pen"></i></h3>
+							<div class="articles-list">
+								<!-- 文章卡片将通过JavaScript动态生成 -->
+							</div>
+						</section>
+					</div>
 
-                    <!-- 近期文章 -->
-                    <section class="articles-section">
-                        <h3 class="section-title">近期文章 <i class="fas fa-pen"></i></h3>
-                        <div class="articles-list">
-                            <!-- 文章卡片将通过JavaScript动态生成 -->
-                        </div>
-                    </section>
+					<!-- 右侧悬浮边栏 -->
+					<aside class="sidebar">
+						<!-- 正在阅读 -->
+						<div class="sidebar-card">
+							<h4 class="sidebar-title">
+								<i class="fas fa-book-open"></i> 正在阅读
+							</h4>
+							<div class="reading-book">
+								<h5 class="book-title">《人间失格》</h5>
+								<p class="book-author">太宰治</p>
+								<div class="reading-progress">
+									<div class="progress-bar">
+										<div class="progress-fill" style="width: 65%"></div>
+									</div>
+									<span class="progress-text">65% 已读</span>
+								</div>
+							</div>
+						</div>
 
-                    <!-- 兴趣标签云 -->
-                    <section class="tags-section">
-                        <h3 class="section-title">兴趣标签 <i class="fas fa-tags"></i></h3>
-                        <div class="tags-cloud">
-                            <!-- 标签将通过JavaScript动态生成 -->
-                        </div>
-                    </section>
-                </div>
+						<!-- 随机摄影作品 -->
+						<div class="sidebar-card">
+							<h4 class="sidebar-title">
+								<i class="fas fa-image"></i> 摄影瞬间
+							</h4>
+							<div class="random-photo">
+								<img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
+									alt="随机摄影作品" class="random-photo-img">
+								<p class="photo-caption">"黄昏的海岸线" • 2023年5月</p>
+							</div>
+						</div>
 
-                <!-- 右侧悬浮边栏 -->
-                <aside class="sidebar">
-                    <!-- 正在阅读 -->
-                    <div class="sidebar-card">
-                        <h4 class="sidebar-title">
-                            <i class="fas fa-book-open"></i> 正在阅读
-                        </h4>
-                        <div class="reading-book">
-                            <h5 class="book-title">《人间失格》</h5>
-                            <p class="book-author">太宰治</p>
-                            <div class="reading-progress">
-                                <div class="progress-bar">
-                                    <div class="progress-fill" style="width: 65%"></div>
-                                </div>
-                                <span class="progress-text">65% 已读</span>
-                            </div>
-                        </div>
-                    </div>
+						<!-- 订阅框 -->
+						<div class="sidebar-card subscribe-card">
+							<h4 class="sidebar-title">
+								<i class="fas fa-paper-plane"></i> 保持灵感
+							</h4>
+							<p class="subscribe-text">订阅获取最新文章和生活灵感</p>
+							<div class="subscribe-form">
+								<input type="email" class="subscribe-input" placeholder="你的电子邮箱">
+								<button class="subscribe-btn">Stay Inspired ♡</button>
+							</div>
+						</div>
+					</aside>
+				</div>
+			</div>
+		</main>
 
-                    <!-- 随机摄影作品 -->
-                    <div class="sidebar-card">
-                        <h4 class="sidebar-title">
-                            <i class="fas fa-image"></i> 摄影瞬间
-                        </h4>
-                        <div class="random-photo">
-                            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="随机摄影作品" class="random-photo-img">
-                            <p class="photo-caption">"黄昏的海岸线" • 2023年5月</p>
-                        </div>
-                    </div>
+		<!-- 页脚 -->
+		<footer class="footer">
+			<div class="container">
+				<div class="footer-content">
+					<p class="footer-message">Thanks for stopping by!</p>
+					<div class="footer-divider"></div>
+					<div class="footer-info">
+						<p class="copyright">© 2025 闲人's Blog. 感受身边的科技.</p>
+						<p class="footer-links">
+							<a href="#">联系我</a> • TNU2025
+						</p>
+					</div>
+				</div>
+			</div>
+		</footer>
 
-                    <!-- 订阅框 -->
-                    <div class="sidebar-card subscribe-card">
-                        <h4 class="sidebar-title">
-                            <i class="fas fa-paper-plane"></i> 保持灵感
-                        </h4>
-                        <p class="subscribe-text">订阅获取最新文章和生活灵感</p>
-                        <div class="subscribe-form">
-                            <input type="email" class="subscribe-input" placeholder="你的电子邮箱">
-                            <button class="subscribe-btn">Stay Inspired ♡</button>
-                        </div>
-                    </div>
-                </aside>
-            </div>
-        </div>
-    </main>
-
-    <!-- 页脚 -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <p class="footer-message">Thanks for stopping by!</p>
-                <div class="footer-divider"></div>
-                <div class="footer-info">
-                    <p class="copyright">© 2025 闲人's Blog. 所有内容均为原创.</p>
-                    <p class="footer-links">
-                        <a href="#">联系我</a> • TNU2025
-                    </p>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- JavaScript文件 -->
-    <script src="js/script.js"></script>
-</body>
+		<!-- JavaScript文件 -->
+		<script src="js/script.js"></script>
+	</body>
 </html>
